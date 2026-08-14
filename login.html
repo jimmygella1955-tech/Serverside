@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign In — Serversiding</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-page">
+<div class="hero-blob blob-a"></div>
+<div class="hero-blob blob-b"></div>
+<div class="auth-card">
+  <a class="logo" href="index.html">SERVER<span>SIDING</span></a>
+  <h1>Welcome back</h1>
+  <p class="muted">Sign in to your dashboard</p>
+  <form id="loginForm">
+    <label>Email</label>
+    <input type="email" id="email" placeholder="you@example.com" required />
+    <label>Password</label>
+    <input type="password" id="password" placeholder="••••••••" required />
+    <button class="btn primary full" type="submit">Sign In</button>
+  </form>
+  <p class="muted note">Demo mode: any credentials work. Replace with a real auth backend before launch.</p>
+  <p class="muted">No account? <a href="#" onclick="registerDemo(event)">Create one</a></p>
+</div>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  localStorage.setItem("sd_session", JSON.stringify({ email: document.getElementById("email").value, ts: Date.now() }));
+  location.href = "dashboard.html";
+});
+function registerDemo(e) {
+  e.preventDefault();
+  document.getElementById("email").value = "new@example.com";
+  document.getElementById("password").value = "changeme";
+}
+</script>
+</body>
+</html>

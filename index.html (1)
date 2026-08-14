@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Serversiding — Roblox Serverside Control Panel</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="landing">
+<nav class="navbar">
+  <a class="logo" href="index.html">SERVER<span>SIDING</span></a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://discord.gg/example" target="_blank">Discord</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn ghost" href="login.html">Sign In</a>
+    <a class="btn primary" href="login.html">Get Started</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-blob blob-a"></div>
+  <div class="hero-blob blob-b"></div>
+  <div class="hero-content">
+    <p class="eyebrow">⚡ The best Roblox serverside on the market</p>
+    <h1>Meet The Best <span class="grad">Roblox Serverside</span> On The Market.</h1>
+    <p class="sub">
+      A professional web-based server-side control platform for <strong>your own Roblox games</strong>.
+      Manage, command and script your server directly from your browser. No downloads, no client modifications,
+      powered by Roblox's official Open Cloud API.
+    </p>
+    <div class="hero-cta">
+      <a class="btn primary lg" href="login.html">View Plans</a>
+      <a class="btn ghost lg" href="#features">Learn More</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="terminal-card">
+      <div class="terminal-bar"><span></span><span></span><span></span><em>dashboard — executor</em></div>
+      <div class="terminal-body">
+        <p><span class="t-num">1</span> <span class="t-kw">announce</span> <span class="t-str">"Welcome to our game!"</span></p>
+        <p><span class="t-num">2</span> <span class="t-kw">kick</span> <span class="t-str">"griefer123"</span></p>
+        <p><span class="t-num">3</span> <span class="t-kw">giveItem</span> <span class="t-str">"Player456"</span>, <span class="t-str">"Sword"</span></p>
+        <p><span class="t-num">4</span> <span class="t-kw">setConfig</span> <span class="t-str">"gravity"</span>, <span class="t-num">0.5</span></p>
+        <p class="t-out">→ SUCCESS: command accepted by server (4.2ms)</p>
+      </div>
+    </div>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><b>99.9%</b><span>Uptime</span></div>
+    <div class="stat"><b>10K+</b><span>Commands Run</span></div>
+    <div class="stat"><b>0</b><span>Downloads Needed</span></div>
+    <div class="stat"><b>24/7</b><span>Support</span></div>
+  </div>
+</header>
+
+<section id="features" class="section">
+  <h2>Everything you need, <span class="grad">in your browser</span></h2>
+  <div class="feature-grid">
+    <div class="card"><h3>🌐 Web-Based</h3><p>Full server control from any browser. No installs, no Roblox client modifications.</p></div>
+    <div class="card"><h3>📱 Any Device</h3><p>Phone, tablet or PC — log in and control your server from anywhere.</p></div>
+    <div class="card"><h3>⌨️ Script Editor</h3><p>Command editor with logs. Write once, execute instantly on your live server.</p></div>
+    <div class="card"><h3>🔑 Key System</h3><p>Generate license keys and sell dashboard access to staff or players.</p></div>
+    <div class="card"><h3>📜 Live Logs</h3><p>Every command, kick, ban and config change — timestamped and searchable.</p></div>
+    <div class="card"><h3>🛡️ Official API</h3><p>Built on Roblox Open Cloud + MessagingService. No ToS violations, no bans.</p></div>
+  </div>
+</section>
+
+<section id="pricing" class="section">
+  <h2>Simple, <span class="grad">fair pricing</span></h2>
+  <div class="price-grid">
+    <div class="card price">
+      <h3>Free</h3>
+      <p class="amount">$0<span>/mo</span></p>
+      <ul><li>1 connected game</li><li>Basic commands</li><li>Community support</li></ul>
+      <a class="btn ghost" href="login.html">Start Free</a>
+    </div>
+    <div class="card price featured">
+      <h3>Pro</h3>
+      <p class="amount">$9.99<span>/mo</span></p>
+      <ul><li>3 connected games</li><li>All commands + scripts</li><li>Key system included</li><li>Priority support</li></ul>
+      <a class="btn primary" href="login.html">Get Pro</a>
+      <p class="crypto">💳 Crypto payments available at checkout</p>
+    </div>
+    <div class="card price">
+      <h3>V.I.P</h3>
+      <p class="amount">$19.99<span>/mo</span></p>
+      <ul><li>Unlimited games</li><li>Custom commands</li><li>API access &amp; webhooks</li><li>24/7 direct support</li></ul>
+      <a class="btn ghost" href="login.html">Get V.I.P</a>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section">
+  <h2>How it <span class="grad">works</span></h2>
+  <div class="steps">
+    <div class="step"><b>1</b><h3>Connect your game</h3><p>Paste your Universe ID and Open Cloud API key — one time setup.</p></div>
+    <div class="step"><b>2</b><h3>Add the server script</h3><p>Drop one Luau script into your game. It listens for dashboard commands.</p></div>
+    <div class="step"><b>3</b><h3>Execute from anywhere</h3><p>Open the dashboard and run commands on your live server instantly.</p></div>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <h2>Frequently asked <span class="grad">questions</span></h2>
+  <div class="faq">
+    <details><summary>Do I have to download anything?</summary><p>No. Everything runs in your browser. The only piece on the Roblox side is a small Luau script you add to your own game.</p></details>
+    <details><summary>Can my Roblox account get banned?</summary><p>No. This uses Roblox's official Open Cloud API and MessagingService. There is nothing to detect.</p></details>
+    <details><summary>Is this against Roblox Terms of Use?</summary><p>No — it's a control panel for games you own, built on Roblox's official APIs.</p></details>
+    <details><summary>How is this different from a traditional executor?</summary><p>Traditional executors inject into the client to attack other people's games. This talks to your own server through Roblox's sanctioned channels.</p></details>
+    <details><summary>What devices are supported?</summary><p>Any device with a modern browser — Windows, macOS, Linux, Android, iOS.</p></details>
+    <details><summary>What can this be used for?</summary><p>Moderation (kick/ban), announcements, item grants, config changes, and custom commands in your own game.</p></details>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-col"><p class="logo">SERVER<span>SIDING</span></p><p class="muted">The leader in Roblox serverside control panels.</p></div>
+  <div class="footer-col"><h4>Product</h4><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="dashboard.html">Dashboard</a></div>
+  <div class="footer-col"><h4>Legal</h4><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><a href="#">Refund Policy</a></div>
+  <div class="footer-col"><h4>Support</h4><a href="#">Discord Server</a><a href="mailto:contact@example.com">Contact</a></div>
+  <p class="copyright">© 2026 Serversiding. Not affiliated with Roblox Corporation.</p>
+</footer>
+</body>
+</html>

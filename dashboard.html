@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — Serversiding</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dash-body">
+<aside class="sidebar">
+  <a class="logo" href="index.html">SERVER<span>SIDING</span></a>
+  <nav class="side-nav">
+    <button data-view="overview" class="active">📊 Overview</button>
+    <button data-view="executor">⚡ Executor</button>
+    <button data-view="scripts">📜 Scripts</button>
+    <button data-view="logs">🖥️ Logs</button>
+    <button data-view="keys">🔑 Keys</button>
+    <button data-view="settings">⚙️ Settings</button>
+  </nav>
+  <div class="side-user">
+    <div class="avatar" id="avatar">U</div>
+    <div><b id="userEmail">user@example.com</b><span class="pill online">● Online</span></div>
+    <button class="btn ghost sm" onclick="logout()">Logout</button>
+  </div>
+</aside>
+
+<main class="dash-main">
+  <!-- OVERVIEW -->
+  <section id="view-overview" class="view">
+    <h1>Overview</h1>
+    <div class="stat-cards">
+      <div class="card"><b id="statCmds">0</b><span>Commands Run</span></div>
+      <div class="card"><b id="statGames">1</b><span>Connected Games</span></div>
+      <div class="card"><b id="statKeys">0</b><span>Active Keys</span></div>
+      <div class="card"><b id="statUptime">99.9%</b><span>Uptime</span></div>
+    </div>
+    <div class="card game-card">
+      <h3>Game Status</h3>
+      <p><span class="pill online">● Server Online</span> Waiting for commands…</p>
+      <p class="muted">Quick actions:</p>
+      <div class="quick-actions">
+        <button class="btn primary sm" onclick="go('executor')">Open Executor</button>
+        <button class="btn ghost sm" onclick="go('keys')">Manage Keys</button>
+        <button class="btn ghost sm" onclick="go('settings')">Settings</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXECUTOR -->
+  <section id="view-executor" class="view hidden">
+    <h1>Executor</h1>
+    <div class="editor-wrap">
+      <div class="gutter" id="gutter">1</div>
+      <textarea id="editor" spellcheck="false"
+        placeholder='Type a command… e.g.
+
+announce Welcome to the server!
+kick PlayerName
+giveItem PlayerName Sword
+setConfig gravity 0.5
+{"cmd":"teleport","player":"Name","x":0,"y":50,"z":0}'></textarea>
+    </div>
+    <div class="editor-actions">
+      <button class="btn primary" onclick="executeScript()">▶ Execute</button>
+      <button class="btn ghost sm" onclick="saveScript()">💾 Save Script</button>
+      <button class="btn ghost sm" onclick="clearEditor()">Clear</button>
+      <span class="muted" id="execStatus"></span>
+    </div>
+    <div class="card mini-log">
+      <h3>Recent output</h3>
+      <div id="miniLog" class="log-console"></div>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <section id="view-scripts" class="view hidden">
+    <h1>Saved Scripts</h1>
+    <div class="card"><div id="scriptList" class="script-list"><p class="muted">No saved scripts yet.</p></div></div>
+  </section>
+
+  <!-- LOGS -->
+  <section id="view-logs" class="view hidden">
+    <h1>Command Logs</h1>
+    <div class="card"><div id="fullLog" class="log-console tall"></div>
+    <div class="editor-actions"><button class="btn ghost sm" onclick="clearLogs()">Clear Logs</button></div></div>
+  </section>
+
+  <!-- KEYS -->
+  <section id="view-keys" class="view hidden">
+    <h1>License Keys</h1>
+    <div class="card">
+      <h3>Generate a key</h3>
+      <div class="key-row">
+        <input id="keyPlan" value="pro" placeholder="plan: free / pro / vip" />
+        <button class="btn primary sm" onclick="generateKey()">Generate</button>
+      </div>
+      <div id="keyList" class="key-list"></div>
+    </div>
+    <div class="card">
+      <h3>Activate a key</h3>
+      <div class="key-row">
+        <input id="activateInput" placeholder="paste key" />
+        <button class="btn ghost sm" onclick="activateKey()">Activate</button>
+      </div>
+      <p class="muted" id="activateMsg"></p>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="view-settings" class="view hidden">
+    <h1>Settings</h1>
+    <div class="card settings-form">
+      <label>Game name</label>
+      <input id="setGameName" placeholder="My Roblox Game" />
+      <label>Universe ID (from create.roblox.com → your game)</label>
+      <input id="setUniverse" placeholder="1234567890" />
+      <label>Bridge URL (the local/remote backend that talks to Open Cloud)</label>
+      <input id="setBridge" placeholder="http://localhost:8787" />
+      <label>Dashboard API key (must match bridge DASH_KEY)</label>
+      <input id="setApiKey" placeholder="sk-dash-…" />
+      <label><input type="checkbox" id="setDemo" checked /> Demo mode (fake execution, no bridge needed)</label>
+      <button class="btn primary sm" onclick="saveSettings()">Save Settings</button>
+      <p class="muted" id="settingsMsg"></p>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
